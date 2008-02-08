@@ -2,11 +2,11 @@
 Summary:	GTK WebKit bindings for python
 Name:		python-%{module}
 Version:	0.2.1
-Release:	0.20080107.1
+Release:	0.20080108.1
 License:	LGPL v2
 Group:		Libraries/Python
 Source0:	%{module}-git.tar.bz2
-# Source0-md5:	a53dd40d51a77aa4c942264dcac9d548
+# Source0-md5:	d519f8e2fe10312a070693d49108dcf9
 URL:		http://live.gnome.org/PyWebKitGtk
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake
@@ -14,7 +14,7 @@ BuildRequires:	gtk+2-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	python-devel >= 1:2.5.0
-BuildRequires:	gtk-webkit-devel
+BuildRequires:	gtk-webkit-devel >= 1.0.0-0.r30090.1
 %pyrequires_eq	python-modules
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
