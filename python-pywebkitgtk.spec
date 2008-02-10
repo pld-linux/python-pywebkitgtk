@@ -14,6 +14,7 @@ BuildRequires:	gtk+2-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	python-devel >= 1:2.5.0
+BuildRequires:	python-pygtk-devel
 BuildRequires:	gtk-webkit-devel >= 1.0.0-0.r30090.1
 %pyrequires_eq	python-modules
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
