@@ -3,7 +3,7 @@ Summary:	GTK WebKit bindings for Python
 Summary(pl.UTF-8):	Wiązania biblioteki GTK WebKit dla Pythona
 Name:		python-%{module}
 Version:	0.2.1
-Release:	0.20080108.2
+Release:	0.20080108.3
 License:	LGPL v2
 Group:		Libraries/Python
 Source0:	%{module}-git.tar.bz2
