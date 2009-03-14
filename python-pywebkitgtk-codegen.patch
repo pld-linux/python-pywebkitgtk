@@ -1,0 +1,11 @@
+--- pywebkitgtk-1.1/Makefile.am~	2009-03-07 03:07:02.000000000 +0100
++++ pywebkitgtk-1.1/Makefile.am	2009-03-14 15:30:50.540490506 +0100
+@@ -4,7 +4,7 @@
+ webkit_override :=
+ webkit_cflags :=
+ 
+-CREATEDEFS = $(PYTHON) $(PYGTK_CODEGENDIR)/createdefs.py
++CREATEDEFS = $(PYTHON) $(PYGTK_CODEGENDIR)/createdefs.pyc
+ 
+ defsdir = $(pkgdatadir)/defs
+ defs_DATA = $(webkit_defs)
