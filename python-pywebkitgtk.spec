@@ -2,12 +2,13 @@
 Summary:	GTK WebKit bindings for Python
 Summary(pl.UTF-8):	Wiązania biblioteki GTK WebKit dla Pythona
 Name:		python-%{module}
-Version:	1.0.1
-Release:	2
+Version:	1.1
+Release:	1
 License:	LGPL v2
 Group:		Libraries/Python
 Source0:	http://pywebkitgtk.googlecode.com/files/%{module}-%{version}.tar.gz
-# Source0-md5:	26343c95f3f381a7f4f6e1cb63ce237d
+# Source0-md5:	5c6aa1db64f40ba7ee1811f28df47303
+Patch0:		%{name}-codegen.patch
 URL:		http://live.gnome.org/PyWebKitGtk
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake
@@ -16,7 +17,7 @@ BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	python-devel >= 1:2.5.0
 BuildRequires:	python-pygtk-devel >= 2:2.0
-BuildRequires:	gtk-webkit-devel >= 1.0.1
+BuildRequires:	gtk-webkit-devel >= 1.1.1
 %pyrequires_eq	python-modules
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -43,6 +44,7 @@ Plik programistyczny wiązań biblioteki GTK WebKit dla Pythona.
 
 %prep
 %setup -q -n %{module}-%{version}
+%patch0 -p1
 
 %build
 %{__libtoolize}
@@ -65,7 +67,9 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{py_sitedir}/gtk-2.0/webkit.so
+%dir %{_datadir}/pywebkitgtk
 
 %files devel
 %defattr(644,root,root,755)
-%{pydefsdir}/webkit.defs
+%dir %{_datadir}/pywebkitgtk/defs
+%{_datadir}/pywebkitgtk/defs/webkit*.defs
