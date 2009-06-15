@@ -2,12 +2,12 @@
 Summary:	GTK WebKit bindings for Python
 Summary(pl.UTF-8):	Wiązania biblioteki GTK WebKit dla Pythona
 Name:		python-%{module}
-Version:	1.1.4
+Version:	1.1.5
 Release:	1
 License:	LGPL v2
 Group:		Libraries/Python
 Source0:	http://pywebkitgtk.googlecode.com/files/%{module}-%{version}.tar.gz
-# Source0-md5:	442b73a9734716ad2456650f3eacf6a2
+# Source0-md5:	65d435ff62ac0f8a14b2850233b4d1cd
 Patch0:		%{name}-codegen.patch
 URL:		http://code.google.com/p/pywebkitgtk/
 BuildRequires:	autoconf >= 2.59
@@ -17,7 +17,7 @@ BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	python-devel >= 1:2.5.0
 BuildRequires:	python-pygtk-devel >= 2:2.0
-BuildRequires:	gtk-webkit-devel >= 1.1.4
+BuildRequires:	gtk-webkit-devel >= 1.1.5
 %pyrequires_eq	python-modules
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
