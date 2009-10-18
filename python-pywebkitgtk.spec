@@ -14,6 +14,7 @@ BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake
 BuildRequires:	gtk+2-devel >= 1:2.0
 BuildRequires:	libtool
+BuildRequires:	libicu-devel
 BuildRequires:	pkgconfig
 BuildRequires:	python-devel >= 1:2.5.0
 BuildRequires:	python-pygtk-devel >= 2:2.0
