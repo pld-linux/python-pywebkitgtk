@@ -14,12 +14,13 @@ BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake
 BuildRequires:	geoclue-devel
 BuildRequires:	gtk+2-devel >= 1:2.0
-BuildRequires:	libtool
+BuildRequires:	gtk-webkit-devel >= 1.1.5
 BuildRequires:	libicu-devel
+BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	python-devel >= 1:2.5.0
 BuildRequires:	python-pygtk-devel >= 2:2.0
-BuildRequires:	gtk-webkit-devel >= 1.1.5
+BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-modules
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
