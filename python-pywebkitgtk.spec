@@ -2,12 +2,12 @@
 Summary:	GTK WebKit bindings for Python
 Summary(pl.UTF-8):	Wiązania biblioteki GTK WebKit dla Pythona
 Name:		python-%{module}
-Version:	1.1.5
-Release:	3
+Version:	1.1.8
+Release:	1
 License:	LGPL v2
 Group:		Libraries/Python
 Source0:	http://pywebkitgtk.googlecode.com/files/%{module}-%{version}.tar.gz
-# Source0-md5:	65d435ff62ac0f8a14b2850233b4d1cd
+# Source0-md5:	158335385354ba38090c9324b37bf225
 Patch0:		%{name}-codegen.patch
 URL:		http://code.google.com/p/pywebkitgtk/
 BuildRequires:	autoconf >= 2.59
@@ -55,7 +55,8 @@ Plik programistyczny wiązań biblioteki GTK WebKit dla Pythona.
 %{__aclocal} -I m4
 %{__autoconf}
 %{__automake}
-%configure
+%configure \
+	--disable-static
 %{__make}
 
 %install
@@ -64,15 +65,23 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%py_comp  $RPM_BUILD_ROOT%{py_sitedir}
+%py_ocomp $RPM_BUILD_ROOT%{py_sitedir}
+%py_postclean
+
+%{__rm} $RPM_BUILD_ROOT%{py_sitedir}/webkit/webkit.la
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root) %{py_sitedir}/gtk-2.0/webkit.so
+%attr(755,root,root) %{py_sitedir}/webkit/webkit.so
+%{py_sitedir}/webkit/*.py[co]
 %dir %{_datadir}/pywebkitgtk
 
 %files devel
 %defattr(644,root,root,755)
 %dir %{_datadir}/pywebkitgtk/defs
 %{_datadir}/pywebkitgtk/defs/webkit*.defs
+%{_pkgconfigdir}/pywebkitgtk-1.0.pc
