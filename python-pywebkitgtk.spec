@@ -3,7 +3,7 @@ Summary:	GTK WebKit bindings for Python
 Summary(pl.UTF-8):	Wiązania biblioteki GTK WebKit dla Pythona
 Name:		python-%{module}
 Version:	1.1.8
-Release:	1
+Release:	2
 License:	LGPL v2
 Group:		Libraries/Python
 Source0:	http://pywebkitgtk.googlecode.com/files/%{module}-%{version}.tar.gz
@@ -77,6 +77,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%dir %{py_sitedir}/webkit
 %attr(755,root,root) %{py_sitedir}/webkit/webkit.so
 %{py_sitedir}/webkit/*.py[co]
 %dir %{_datadir}/pywebkitgtk
