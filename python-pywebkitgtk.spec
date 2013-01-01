@@ -25,8 +25,6 @@ BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-modules
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define pydefsdir %(pkg-config --variable=defsdir pygtk-2.0)
-
 %description
 GTK WebKit bindings for Python.
 
